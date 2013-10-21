@@ -1,18 +1,30 @@
 package me.brawl.Mailer;
 
 import java.util.Properties;
+
 import javax.mail.*;
 import javax.mail.internet.*;
+
+import org.bukkit.ChatColor;
+import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
 
 
 
-public class Mailer {
+public class Mailer implements Listener{
+	 
+    public Main plugin;
+   
+    public Mailer(Main instance){
+            plugin = instance;
+    }
+   
 
 
 	public void onPlayerChat(AsyncPlayerChatEvent e) {
 		if(e.getMessage().contains("The british are coming")){
+			e.getPlayer().sendMessage(ChatColor.GREEN + "Sent email!");
 		}
 		}
 			
@@ -57,6 +69,7 @@ public class Mailer {
          // Send message
          Transport.send(message);
          System.out.println("Sent message successfully....");
+      
       }catch (MessagingException mex) {
          mex.printStackTrace();
       }
