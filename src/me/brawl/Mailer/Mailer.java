@@ -1,12 +1,8 @@
 package me.brawl.Mailer;
 
 import java.util.Properties;
-
 import javax.mail.*;
 import javax.mail.internet.*;
-
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandSender;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
 
@@ -16,11 +12,11 @@ public class Mailer {
 
 
 	public void onPlayerChat(AsyncPlayerChatEvent e) {
-		{
-	
+		if(e.getMessage().contains("The british are coming")){
+		}
 		}
 			
-		}
+		
    public static void main(String [] args)
    {    
       // Recipient's email ID needs to be mentioned.
@@ -66,3 +62,4 @@ public class Mailer {
       }
    }
 }
+	
